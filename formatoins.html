@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MTJ Academy - Formations</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#f4f7fb;
+color:#172033;
+line-height:1.6;
+}
+
+header{
+background:#07152f;
+color:white;
+padding:16px 20px;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 3px 15px rgba(0,0,0,.2);
+}
+
+.navbar{
+max-width:1200px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+}
+
+.logo{
+font-size:25px;
+font-weight:900;
+}
+
+.logo span{
+color:#29d3ff;
+}
+
+.nav-links{
+display:flex;
+gap:20px;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+.language{
+padding:8px;
+border-radius:7px;
+border:0;
+}
+
+.hero{
+background:linear-gradient(135deg,#07152f,#12417e,#0086a8);
+color:white;
+text-align:center;
+padding:75px 20px;
+}
+
+.hero h1{
+font-size:clamp(38px,7vw,65px);
+margin-bottom:10px;
+}
+
+.hero h1 span{
+color:#29d3ff;
+}
+
+.hero p{
+max-width:800px;
+margin:0 auto 25px;
+font-size:18px;
+}
+
+.btn{
+display:inline-block;
+background:#29d3ff;
+color:#07152f;
+padding:12px 20px;
+border:none;
+border-radius:9px;
+font-weight:bold;
+cursor:pointer;
+text-decoration:none;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:35px 20px;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:25px;
+}
+
+.section-title h2{
+font-size:34px;
+color:#07152f;
+}
+
+.section-title p{
+color:#687386;
+}
+
+.search{
+width:100%;
+padding:15px;
+border:2px solid #dbe2ec;
+border-radius:10px;
+font-size:16px;
+margin-bottom:18px;
+outline:none;
+}
+
+.search:focus{
+border-color:#29d3ff;
+}
+
+.filters{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin-bottom:25px;
+}
+
+.filter{
+border:none;
+background:#e5ebf4;
+padding:10px 15px;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.filter.active,
+.filter:hover{
+background:#07152f;
+color:white;
+}
+
+.courses-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
+}
+
+.course-card{
+background:white;
+border-radius:16px;
+padding:22px;
+box-shadow:0 7px 25px rgba(0,0,0,.08);
+border:1px solid #e5e9f0;
+cursor:pointer;
+transition:.25s;
+}
+
+.course-card:hover{
+transform:translateY(-6px);
+box-shadow:0 15px 30px rgba(0,0,0,.15);
+}
+
+.course-icon{
+font-size:42px;
+margin-bottom:8px;
+}
+
+.course-card h3{
+color:#07152f;
+margin-bottom:8px;
+}
+
+.course-card p{
+color:#687386;
+font-size:14px;
+}
+
+.category{
+display:inline-block;
+margin-top:13px;
+padding:5px 10px;
+background:#e9f8fc;
+color:#087fa3;
+border-radius:20px;
+font-size:12px;
+font-weight:bold;
+}
+
+/* PAGE COURS */
+
+#coursePage{
+display:none;
+background:white;
+max-width:1000px;
+margin:35px auto;
+padding:30px;
+border-radius:18px;
+box-shadow:0 10px 35px rgba(0,0,0,.12);
+}
+
+.course-header{
+border-bottom:1px solid #ddd;
+padding-bottom:20px;
+margin-bottom:25px;
+}
+
+.course-header-top{
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+gap:20px;
+}
+
+.course-header h2{
+font-size:35px;
+color:#07152f;
+}
+
+.course-description{
+color:#687386;
+margin-top:5px;
+}
+
+.close-btn{
+border:none;
+background:#edf1f5;
+padding:10px 15px;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.lesson{
+margin-bottom:25px;
+background:#f7f9fc;
+border-left:5px solid #087fa3;
+border-radius:10px;
+padding:22px;
+}
+
+.lesson h3{
+color:#07152f;
+margin-bottom:15px;
+}
+
+.info-box{
+background:white;
+padding:15px;
+border-radius:9px;
+margin:10px 0;
+}
+
+.info-box strong{
+color:#087fa3;
+}
+
+.example{
+background:#eef9fc;
+}
+
+.exercise{
+background:#fff7df;
+padding:18px;
+border-radius:10px;
+margin-top:15px;
+}
+
+.answer{
+display:none;
+margin-top:12px;
+padding:13px;
+background:white;
+border-radius:8px;
+}
+
+.answer-btn{
+margin-top:10px;
+padding:9px 14px;
+border:0;
+border-radius:7px;
+background:#07152f;
+color:white;
+cursor:pointer;
+}
+
+.quiz{
+background:#07152f;
+color:white;
+padding:25px;
+border-radius:15px;
+margin-top:30px;
+}
+
+.quiz h3{
+margin-bottom:10px;
+}
+
+.quiz-option{
+display:block;
+width:100%;
+text-align:left;
+margin:8px 0;
+padding:12px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+.quiz-option:hover{
+background:#dceffc;
+}
+
+#quizResult{
+margin-top:15px;
+font-weight:bold;
+}
+
+.back-btn{
+margin-top:25px;
+}
+
+/* FOOTER */
+
+footer{
+background:#07152f;
+color:white;
+text-align:center;
+padding:35px 20px;
+margin-top:50px;
+}
+
+footer strong{
+color:#29d3ff;
+}
+
+/* MOBILE */
+
+@media(max-width:1000px){
+
+.courses-grid{
+grid-template-columns:repeat(3,1fr);
+}
+
+}
+
+@media(max-width:750px){
+
+.courses-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.nav-links{
+display:none;
+}
+
+}
+
+@media(max-width:520px){
+
+.courses-grid{
+grid-template-columns:1fr;
+}
+
+.course-header-top{
+display:block;
+}
+
+.close-btn{
+margin-top:15px;
+}
+
+#coursePage{
+margin:20px 10px;
+padding:20px;
+}
+
+.course-header h2{
+font-size:28px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="navbar">
+
+<div class="logo">
+MTJ <span>ACADEMY</span>
+</div>
+
+<div class="nav-links">
+
+<a href="index.html">
+Accueil
+</a>
+
+<a href="#formations">
+Formations
+</a>
+
+</div>
+
+<select class="language" id="language">
+
+<option value="fr">
+🇫🇷 Français
+</option>
+
+<option value="en">
+🇬🇧 English
+</option>
+
+</select>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<h1>
+MTJ <span>Academy</span>
+</h1>
+
+<p>
+Apprends, développe tes compétences et prépare ton avenir
+avec nos formations éducatives, techniques et numériques.
+</p>
+
+<a href="#formations" class="btn">
+Découvrir les formations
+</a>
+
+</section>
+
+
+<main class="container" id="formations">
+
+<div class="section-title">
+
+<h2>
+🎓 Nos 20 formations
+</h2>
+
+<p>
+Choisis une formation pour commencer ton apprentissage.
+</p>
+
+</div>
+
+
+<input
+type="search"
+id="search"
+class="search"
+placeholder="🔎 Rechercher une formation..."
+>
+
+
+<div class="filters">
+
+<button
+class="filter active"
+onclick="filterCourses('all',this)"
+>
+Toutes
+</button>
+
+<button
+class="filter"
+onclick="filterCourses('school',this)"
+>
+📚 École
+</button>
+
+<button
+class="filter"
+onclick="filterCourses('technical',this)"
+>
+⚡ Technique
+</button>
+
+<button
+class="filter"
+onclick="filterCourses('business',this)"
+>
+💼 Business
+</button>
+
+<button
+class="filter"
+onclick="filterCourses('digital',this)"
+>
+💻 Numérique
+</button>
+
+</div>
+
+
+<div id="coursesGrid" class="courses-grid"></div>
+
+</main>
+
+
+<section id="coursePage">
+
+<div class="course-header">
+
+<div class="course-header-top">
+
+<div>
+
+<div id="selectedIcon" class="course-icon"></div>
+
+<h2 id="selectedTitle"></h2>
+
+<p
+id="selectedDescription"
+class="course-description"
+></p>
+
+</div>
+
+<button
+class="close-btn"
+onclick="closeCourse()"
+>
+✕ Fermer
+</button>
+
+</div>
+
+</div>
+
+
+<div id="lessonsContainer"></div>
+
+
+<div class="quiz">
+
+<h3>
+🧠 Quiz de la formation
+</h3>
+
+<p id="quizQuestion"></p>
+
+<div id="quizOptions"></div>
+
+<div id="quizResult"></div>
+
+</div>
+
+
+<button
+class="btn back-btn"
+onclick="closeCourse()"
+>
+⬅ Retour aux formations
+</button>
+
+</section>
+
+
+<footer>
+
+<p>
+<strong>MTJ ACADEMY</strong>
+</p>
+
+<p>
+Éducation • Technique • Entrepreneuriat • Numérique
+</p>
+
+<p>
+Créé par M K Jérémie
+</p>
+
+<p>
+© 2026 MTJ Academy
+</p>
+
+</footer>
+
+
+<script>
+
+/* =========================
+20 FORMATIONS
+========================= */
+
+const courses=[
+
+{
+id:1,
+name:"Mathématiques",
+icon:"📐",
+category:"school",
+description:"Maîtrise les bases et les notions importantes des mathématiques.",
+
+lessons:[
+
+{
+title:"Les nombres",
+definition:"Un nombre permet de représenter une quantité ou une valeur.",
+explanation:"Les nombres peuvent être naturels, entiers, décimaux ou fractionnaires.",
+example:"Exemple : 5, 12, 3,5 et 1/2.",
+exercise:"Écris trois nombres entiers.",
+answer:"Exemple : 4, 15 et 28."
+},
+
+{
+title:"Les opérations",
+definition:"Les opérations principales sont l'addition, la soustraction, la multiplication et la division.",
+explanation:"Elles permettent de réaliser des calculs.",
+example:"12 + 8 = 20.",
+exercise:"Calcule : 15 + 7.",
+answer:"22."
+},
+
+{
+title:"Les fractions",
+definition:"Une fraction représente une partie d'un tout.",
+explanation:"Le nombre du haut est le numérateur et celui du bas est le dénominateur.",
+example:"Dans 3/4, 3 est le numérateur.",
+exercise:"Quel est le numérateur de 5/8 ?",
+answer:"5."
+},
+
+{
+title:"Les équations",
+definition:"Une équation est une égalité contenant une inconnue.",
+explanation:"On cherche la valeur de l'inconnue.",
+example:"x + 5 = 12 donne x = 7.",
+exercise:"Résous : x + 8 = 20.",
+answer:"x = 12."
+}
+
+],
+
+quiz:{
+question:"Combien font 7 × 6 ?",
+options:["36","42","48"],
+correct:1
+}
+
+},
+
+
+{
+id:2,
+name:"Français",
+icon:"📖",
+category:"school",
+description:"Améliore ta grammaire, ta conjugaison et ton expression.",
+
+lessons:[
+
+{
+title:"Le nom",
+definition:"Le nom désigne une personne, un animal, une chose ou une idée.",
+explanation:"Il peut être commun ou propre.",
+example:"Garçon, école, Cameroun.",
+exercise:"Donne deux noms.",
+answer:"Maison et étudiant."
+},
+
+{
+title:"Le verbe",
+definition:"Le verbe exprime généralement une action ou un état.",
+explanation:"Il change selon le temps et la personne.",
+example:"Je travaille. Nous travaillons.",
+exercise:"Trouve le verbe : Les élèves étudient.",
+answer:"Étudient."
+},
+
+{
+title:"L'adjectif",
+definition:"L'adjectif donne une information sur un nom.",
+explanation:"Il indique une qualité ou une caractéristique.",
+example:"Une grande maison.",
+exercise:"Trouve l'adjectif : Un petit garçon.",
+answer:"Petit."
+},
+
+{
+title:"La conjugaison",
+definition:"La conjugaison consiste à modifier un verbe selon la personne et le temps.",
+explanation:"Un même verbe peut avoir plusieurs formes.",
+example:"Je fais, tu fais, nous faisons.",
+exercise:"Conjugue faire avec nous au présent.",
+answer:"Nous faisons."
+}
+
+],
+
+quiz:{
+question:"Quel mot est un verbe ?",
+options:["Maison","Courir","Table"],
+correct:1
+}
+
+},
+
+
+{
+id:3,
+name:"Anglais",
+icon:"🇬🇧",
+category:"school",
+description:"Apprends les bases de la langue anglaise.",
+
+lessons:[
+
+{
+title:"Pronouns",
+definition:"Pronouns replace nouns in a sentence.",
+explanation:"Common pronouns are I, you, he, she, we and they.",
+example:"I am a student.",
+exercise:"Traduis : Je suis étudiant.",
+answer:"I am a student."
+},
+
+{
+title:"To be",
+definition:"The verb to be means être.",
+explanation:"It is used to describe people and situations.",
+example:"I am a student.",
+exercise:"Complete: I ___ a student.",
+answer:"I am a student."
+},
+
+{
+title:"To have",
+definition:"The verb to have means avoir.",
+explanation:"It can express possession.",
+example:"I have a book.",
+exercise:"Traduis : J'ai un livre.",
+answer:"I have a book."
+},
+
+{
+title:"Vocabulary",
+definition:"Vocabulary is the collection of words used in a language.",
+explanation:"Learning vocabulary helps communication.",
+example:"Book = livre.",
+exercise:"Traduis maison.",
+answer:"House."
+}
+
+],
+
+quiz:{
+question:"What does 'book' mean?",
+options:["Livre","Maison","École"],
+correct:0
+}
+
+},
+
+
+{
+id:4,
+name:"Électricité",
+icon:"⚡",
+category:"technical",
+description:"Découvre les principes fondamentaux de l'électricité.",
+
+lessons:[
+
+{
+title:"Le courant électrique",
+definition:"Le courant électrique correspond au déplacement de charges électriques.",
+explanation:"Il se mesure en ampères.",
+example:"Une intensité peut être de 2 A.",
+exercise:"Quelle est l'unité du courant ?",
+answer:"L'ampère (A)."
+},
+
+{
+title:"La tension",
+definition:"La tension électrique représente une différence de potentiel entre deux points.",
+explanation:"Elle se mesure en volts.",
+example:"Une batterie peut fournir 12 V.",
+exercise:"Quelle est l'unité de la tension ?",
+answer:"Le volt (V)."
+},
+
+{
+title:"La résistance",
+definition:"La résistance s'oppose au passage du courant.",
+explanation:"Elle se mesure en ohms.",
+example:"Une résistance peut avoir 10 Ω.",
+exercise:"Quelle est l'unité de la résistance ?",
+answer:"L'ohm (Ω)."
+},
+
+{
+title:"La loi d'Ohm",
+definition:"La loi d'Ohm relie la tension, la résistance et le courant.",
+explanation:"La formule est U = R × I.",
+example:"10 Ω × 2 A = 20 V.",
+exercise:"R = 5 Ω et I = 3 A. Calcule U.",
+answer:"U = 15 V."
+},
+
+{
+title:"La puissance électrique",
+definition:"La puissance représente la quantité d'énergie électrique utilisée par unité de temps.",
+explanation:"Dans un cas simple, P = U × I.",
+example:"12 V × 2 A = 24 W.",
+exercise:"Calcule P pour U = 10 V et I = 3 A.",
+answer:"P = 30 W."
+}
+
+],
+
+quiz:{
+question:"Quelle est l'unité de la tension ?",
+options:["Ampère","Volt","Ohm"],
+correct:1
+}
+
+},
+
+
+{
+id:5,
+name:"Électronique",
+icon:"🔌",
+category:"technical",
+description:"Apprends les principaux composants électroniques.",
+
+lessons:[
+
+{
+title:"La résistance",
+definition:"Une résistance est un composant qui limite le courant.",
+explanation:"Sa valeur est exprimée en ohms.",
+example:"Une résistance de 100 Ω.",
+exercise:"Quelle est l'unité de la résistance ?",
+answer:"L'ohm."
+},
+
+{
+title:"Le condensateur",
+definition:"Un condensateur peut stocker une charge électrique.",
+explanation:"Il est utilisé dans plusieurs circuits électroniques.",
+example:"Les alimentations peuvent utiliser des condensateurs.",
+exercise:"Quel composant stocke une charge ?",
+answer:"Le condensateur."
+},
+
+{
+title:"La diode",
+definition:"Une diode permet principalement au courant de passer dans un seul sens.",
+explanation:"Elle est utilisée notamment pour le redressement.",
+example:"Une diode peut être utilisée dans une alimentation.",
+exercise:"Dans combien de sens conduit-elle principalement ?",
+answer:"Dans un seul sens."
+},
+
+{
+title:"Le transistor",
+definition:"Un transistor peut fonctionner comme interrupteur ou amplificateur.",
+explanation:"Il est très utilisé en électronique.",
+example:"Il peut commander une charge.",
+exercise:"Donne deux fonctions du transistor.",
+answer:"Interrupteur et amplificateur."
+}
+
+],
+
+quiz:{
+question:"Quel composant limite le courant ?",
+options:["Résistance","Diode","Transformateur"],
+correct:0
+}
+
+},
+
+
+{
+id:6,
+name:"Informatique",
+icon:"💻",
+category:"digital",
+description:"Comprends les ordinateurs, les logiciels et les données.",
+
+lessons:[
+
+{
+title:"Hardware",
+definition:"Le hardware désigne les parties physiques d'un ordinateur.",
+explanation:"Ce sont les éléments que l'on peut toucher.",
+example:"Clavier, souris et écran.",
+exercise:"Cite deux éléments hardware.",
+answer:"Clavier et écran."
+},
+
+{
+title:"Software",
+definition:"Le software désigne les logiciels et programmes.",
+explanation:"Ils permettent à l'ordinateur d'effectuer différentes tâches.",
+example:"Un navigateur web.",
+exercise:"Donne un exemple de logiciel.",
+answer:"Un navigateur web."
+},
+
+{
+title:"Système d'exploitation",
+definition:"Le système d'exploitation gère les ressources de l'appareil.",
+explanation:"Il permet d'utiliser les applications et le matériel.",
+example:"Windows, Linux et Android.",
+exercise:"Donne un système d'exploitation.",
+answer:"Android, Windows ou Linux."
+},
+
+{
+title:"Les fichiers",
+definition:"Un fichier contient des informations enregistrées.",
+explanation:"Il peut être un document, une image, une vidéo ou un programme.",
+example:"devoir.pdf.",
+exercise:"Donne une extension de fichier.",
+answer:".pdf."
+}
+
+],
+
+quiz:{
+question:"Le clavier est-il du hardware ?",
+options:["Oui","Non"],
+correct:0
+}
+
+},
+
+
+{
+id:7,
+name:"Programmation",
+icon:"👨‍💻",
+category:"digital",
+description:"Découvre les algorithmes et les langages de programmation.",
+
+lessons:[
+
+{
+title:"Programmation",
+definition:"La programmation consiste à écrire des instructions pour un ordinateur.",
+explanation:"Un programme suit une logique précise.",
+example:"Un programme peut calculer une moyenne.",
+exercise:"Qu'est-ce que la programmation ?",
+answer:"Écrire des instructions pour un ordinateur."
+},
+
+{
+title:"Algorithme",
+definition:"Un algorithme est une suite d'étapes permettant de résoudre un problème.",
+explanation:"Il décrit une méthode de résolution.",
+example:"Les étapes d'une recette.",
+exercise:"Donne un exemple d'algorithme.",
+answer:"Les étapes pour préparer un repas."
+},
+
+{
+title:"HTML",
+definition:"HTML sert à structurer une page web.",
+explanation:"Il permet de créer des titres, paragraphes et liens.",
+example:"Une balise h1 crée un titre principal.",
+exercise:"À quoi sert HTML ?",
+answer:"À structurer une page web."
+},
+
+{
+title:"CSS",
+definition:"CSS permet de mettre en forme une page web.",
+explanation:"Il contrôle les couleurs, tailles et positions.",
+example:"CSS peut modifier la couleur d'un bouton.",
+exercise:"À quoi sert CSS ?",
+answer:"À mettre en forme une page web."
+},
+
+{
+title:"JavaScript",
+definition:"JavaScript ajoute de l'interactivité aux pages web.",
+explanation:"Il peut réagir aux clics et modifier le contenu.",
+example:"Afficher un message après un clic.",
+exercise:"Quel langage ajoute l'interactivité ?",
+answer:"JavaScript."
+}
+
+],
+
+quiz:{
+question:"Quel langage structure une page web ?",
+options:["HTML","CSS","JavaScript"],
+correct:0
+}
+
+},
+
+
+{
+id:8,
+name:"Entrepreneuriat",
+icon:"🚀",
+category:"business",
+description:"Transforme une idée en projet utile et organisé.",
+
+lessons:[
+
+{
+title:"Entrepreneuriat",
+definition:"L'entrepreneuriat consiste à créer, organiser et développer une activité.",
+explanation:"L'entrepreneur cherche généralement à répondre à un besoin.",
+example:"Créer un service de réparation.",
+exercise:"Donne une idée de petite activité.",
+answer:"Service d'impression, par exemple."
+},
+
+{
+title:"L'idée",
+definition:"Une idée de projet propose une solution à un besoin.",
+explanation:"Elle doit être étudiée avant sa réalisation.",
+example:"Créer une plateforme de révision.",
+exercise:"Pourquoi étudier une idée ?",
+answer:"Pour vérifier si elle répond à un besoin."
+},
+
+{
+title:"Le client",
+definition:"Le client achète ou utilise un produit ou service.",
+explanation:"Il faut comprendre ses besoins.",
+example:"Les élèves peuvent être les clients d'un service scolaire.",
+exercise:"Pourquoi connaître ses clients ?",
+answer:"Pour proposer une offre adaptée."
+},
+
+{
+title:"Le marché",
+definition:"Le marché regroupe notamment les clients, les offres et les concurrents.",
+explanation:"L'étude du marché aide à comprendre l'environnement du projet.",
+example:"Comparer les prix des concurrents.",
+exercise:"Que peut-on étudier chez les concurrents ?",
+answer:"Leurs produits, prix et services."
+}
+
+],
+
+quiz:{
+question:"Une bonne idée doit répondre à :",
+options:["Un besoin","Un hasard","Aucune demande"],
+correct:0
+}
+
+},
+
+
+{
+id:9,
+name:"Marketing",
+icon:"📣",
+category:"business",
+description:"Apprends à présenter et promouvoir un produit ou service.",
+
+lessons:[
+
+{
+title:"Marketing",
+definition:"Le marketing consiste notamment à comprendre les besoins des clients et à développer une offre adaptée.",
+explanation:"Il comprend l'étude du marché et la promotion.",
+example:"Une entreprise analyse ses clients avant de lancer un produit.",
+exercise:"Pourquoi étudier les clients ?",
+answer:"Pour comprendre leurs besoins."
+},
+
+{
+title:"Publicité",
+definition:"La publicité présente ou promeut une offre.",
+explanation:"Elle peut utiliser des affiches, vidéos ou réseaux sociaux.",
+example:"Une vidéo présentant un nouveau service.",
+exercise:"Cite deux supports publicitaires.",
+answer:"Affiche et vidéo."
+},
+
+{
+title:"Prix",
+definition:"Le prix est la valeur monétaire demandée pour un produit ou service.",
+explanation:"Il doit tenir compte des coûts et du marché.",
+example:"Un service peut coûter 2 000 FCFA.",
+exercise:"Pourquoi le prix est-il important ?",
+answer:"Il influence la décision d'achat."
+},
+
+{
+title:"Réseaux sociaux",
+definition:"Les réseaux sociaux permettent de communiquer avec une audience en ligne.",
+explanation:"Ils peuvent servir à présenter des produits ou partager du contenu.",
+example:"Publier une démonstration d'un produit.",
+exercise:"Donne un avantage des réseaux sociaux.",
+answer:"Ils permettent de toucher une audience."
+}
+
+],
+
+quiz:{
+question:"Le marketing cherche notamment à comprendre :",
+options:["Les clients","Uniquement les machines","Uniquement les bâtiments"],
+correct:0
+}
+
+},
+
+
+{
+id:10,
+name:"Commerce",
+icon:"🛒",
+category:"business",
+description:"Découvre les principes de l'acha
