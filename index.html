@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="MTJ Academy - Plateforme éducative et professionnelle de M K Jérémie">
+<meta name="description" content="MTJ Academy - Plateforme éducative de M K Jérémie">
 <title>MTJ Academy | Éducation & Entrepreneuriat</title>
 
 <style>
@@ -13,86 +13,85 @@ body{
 font-family:Arial,Helvetica,sans-serif;
 background:#f4f7fb;
 color:#172033;
-line-height:1.6
+line-height:1.7
 }
 header{
 position:sticky;
 top:0;
 z-index:1000;
-background:#0b1736;
+background:#07152f;
 color:white;
-box-shadow:0 3px 15px #0002
+box-shadow:0 3px 15px #0003
 }
 .nav{
-max-width:1200px;
+max-width:1250px;
 margin:auto;
 padding:15px 20px;
 display:flex;
 align-items:center;
 justify-content:space-between;
-gap:20px
+gap:15px
 }
 .logo{
-font-size:22px;
+font-size:23px;
 font-weight:900;
 letter-spacing:1px
 }
-.logo span{color:#35d0ff}
+.logo span{color:#29d3ff}
 nav a{
 color:white;
 text-decoration:none;
-margin:0 8px;
+margin:0 7px;
 font-weight:bold
 }
-nav a:hover{color:#35d0ff}
+nav a:hover{color:#29d3ff}
 select{
 padding:9px;
-border-radius:8px;
-border:0
+border:0;
+border-radius:8px
 }
 .hero{
-background:linear-gradient(135deg,#07142f,#123b76,#087fa3);
+background:linear-gradient(135deg,#07152f,#123c78,#0085a8);
 color:white;
-padding:85px 20px;
-text-align:center
+text-align:center;
+padding:80px 20px
 }
 .hero h1{
-font-size:clamp(38px,7vw,70px);
-margin-bottom:15px
+font-size:clamp(38px,7vw,68px);
+line-height:1.1;
+margin-bottom:18px
 }
 .hero p{
-font-size:20px;
-max-width:750px;
-margin:0 auto 30px;
-opacity:.92
+max-width:800px;
+margin:0 auto 28px;
+font-size:19px
 }
 .btn{
 display:inline-block;
 padding:14px 24px;
+border:0;
 border-radius:10px;
-background:#35d0ff;
-color:#06142e;
+background:#29d3ff;
+color:#06152e;
 font-weight:bold;
 text-decoration:none;
-border:0;
 cursor:pointer
 }
-.btn:hover{transform:translateY(-2px)}
 .stats{
 max-width:1100px;
-margin:-35px auto 40px;
-position:relative;
+margin:-35px auto 35px;
+padding:0 20px;
 display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:15px;
-padding:0 20px
+position:relative
 }
 .stat{
 background:white;
-padding:25px;
-border-radius:15px;
+padding:22px;
 text-align:center;
-box-shadow:0 8px 25px #0001
+border-radius:15px;
+box-shadow:0 8px 25px #0002
 }
 .stat strong{
 display:block;
@@ -100,28 +99,26 @@ font-size:30px;
 color:#087fa3
 }
 .container{
-max-width:1200px;
+max-width:1250px;
 margin:auto;
 padding:20px
 }
-.title{
+.section-title{
 text-align:center;
-margin:30px 0
+margin:35px 0 25px
 }
-.title h2{
-font-size:34px;
-color:#0b1736
+.section-title h2{
+font-size:35px;
+color:#07152f
 }
-.title p{color:#687386}
+.section-title p{color:#687386}
 .tools{
 display:flex;
 gap:12px;
-flex-wrap:wrap;
-margin-bottom:25px
+margin-bottom:18px
 }
 .search{
-flex:1;
-min-width:230px;
+width:100%;
 padding:14px;
 border:2px solid #dce3ee;
 border-radius:10px;
@@ -129,19 +126,20 @@ font-size:16px
 }
 .filters{
 display:flex;
+flex-wrap:wrap;
 gap:8px;
-flex-wrap:wrap
+margin-bottom:25px
 }
 .filter{
-padding:11px 15px;
+padding:10px 15px;
 border:0;
 border-radius:9px;
 background:#e5ebf4;
-cursor:pointer;
-font-weight:bold
+font-weight:bold;
+cursor:pointer
 }
 .filter.active,.filter:hover{
-background:#0b1736;
+background:#07152f;
 color:white
 }
 .grid{
@@ -151,89 +149,152 @@ gap:18px
 }
 .card{
 background:white;
-border-radius:16px;
 padding:22px;
-box-shadow:0 7px 22px #00000010;
-border:1px solid #e7ebf2;
-transition:.25s;
-cursor:pointer
+border-radius:16px;
+border:1px solid #e5e9f0;
+box-shadow:0 7px 22px #0001;
+cursor:pointer;
+transition:.25s
 }
 .card:hover{
 transform:translateY(-5px);
 box-shadow:0 14px 30px #0002
 }
-.icon{font-size:38px;margin-bottom:10px}
-.card h3{margin-bottom:8px;color:#0b1736}
-.card p{color:#687386;font-size:14px}
-.level{
+.icon{font-size:38px}
+.card h3{
+margin:8px 0;
+color:#07152f
+}
+.card p{
+color:#687386;
+font-size:14px
+}
+.tag{
 display:inline-block;
-margin-top:15px;
-padding:5px 9px;
+margin-top:13px;
+padding:5px 10px;
 border-radius:20px;
-background:#e8f8fc;
+background:#e9f8fc;
 color:#087fa3;
 font-size:12px;
 font-weight:bold
 }
-#course{
+
+/* COURS */
+#coursePage{
 display:none;
-background:white;
-margin:40px auto;
 max-width:1000px;
+margin:35px auto;
 padding:30px;
+background:white;
 border-radius:18px;
 box-shadow:0 10px 35px #0002
 }
-.course-head{
+.course-top{
 display:flex;
 justify-content:space-between;
 gap:20px;
 align-items:flex-start;
+border-bottom:1px solid #e5e9f0;
+padding-bottom:20px;
 margin-bottom:25px
+}
+.course-icon{font-size:55px}
+.course-top h2{
+font-size:35px;
+color:#07152f
 }
 .close{
 border:0;
-background:#eef2f7;
+background:#edf1f6;
 padding:10px 15px;
+border-radius:9px;
+cursor:pointer;
+font-weight:bold
+}
+.chapter{
+margin:25px 0;
+padding:22px;
+background:#f7f9fc;
+border-left:5px solid #087fa3;
+border-radius:10px
+}
+.chapter h3{
+color:#07152f;
+margin-bottom:10px
+}
+.definition{
+background:white;
+padding:15px;
+border-radius:9px;
+margin:12px 0
+}
+.example{
+background:#eef9fc;
+padding:15px;
+border-radius:9px;
+margin:12px 0
+}
+.exercise{
+background:#fff8e7;
+padding:18px;
+border-radius:10px;
+margin-top:25px
+}
+.exercise h3{color:#8a5b00}
+.answer{
+margin-top:12px;
+padding:10px;
+background:white;
 border-radius:8px;
-cursor:pointer
+display:none
 }
-.lesson{
-background:#f6f8fc;
-padding:20px;
-border-radius:12px;
-margin:15px 0
+.show-answer{
+border:0;
+padding:9px 13px;
+border-radius:8px;
+background:#07152f;
+color:white;
+cursor:pointer;
+margin-top:10px
 }
-.lesson h3{color:#0b1736;margin-bottom:7px}
 .quiz{
 margin-top:30px;
-padding:25px;
-background:#0b1736;
+background:#07152f;
 color:white;
+padding:25px;
 border-radius:15px
 }
+.quiz h3{margin-bottom:10px}
 .quiz button{
-margin:7px 5px;
 padding:11px 15px;
+margin:6px 4px;
 border:0;
 border-radius:8px;
 cursor:pointer
 }
-#result{
+#quizResult{
 margin-top:15px;
 font-weight:bold
 }
-footer{
+.back{
+margin-top:25px
+}
+.about{
+background:white;
 margin-top:50px;
-background:#07142f;
+padding:40px 20px;
+text-align:center
+}
+footer{
+background:#07152f;
 color:white;
 text-align:center;
 padding:35px 20px
 }
-footer strong{color:#35d0ff}
-.hidden{display:none!important}
+footer strong{color:#29d3ff}
 
-@media(max-width:900px){
+@media(max-width:950px){
 .grid{grid-template-columns:repeat(2,1fr)}
 .stats{grid-template-columns:repeat(2,1fr)}
 nav a{display:none}
@@ -241,9 +302,10 @@ nav a{display:none}
 @media(max-width:600px){
 .grid{grid-template-columns:1fr}
 .stats{grid-template-columns:1fr 1fr}
-.hero{padding:65px 18px}
+.hero{padding:60px 18px}
 .hero p{font-size:17px}
-.course-head{display:block}
+#coursePage{margin:20px 10px;padding:20px}
+.course-top{display:block}
 .close{margin-top:15px}
 }
 </style>
@@ -271,8 +333,8 @@ nav a{display:none}
 <section class="hero" id="accueil">
 <h1>Apprends. Construis. Réussis.</h1>
 <p>
-Une plateforme éducative moderne pour développer tes connaissances,
-tes compétences et préparer ton avenir.
+MTJ Academy est une plateforme éducative destinée à développer
+les connaissances, les compétences techniques et l'esprit d'entreprise.
 </p>
 <a href="#formations" class="btn">Découvrir les formations</a>
 </section>
@@ -280,441 +342,392 @@ tes compétences et préparer ton avenir.
 <section class="stats">
 <div class="stat"><strong>20</strong>Formations</div>
 <div class="stat"><strong>100+</strong>Leçons</div>
-<div class="stat"><strong>FR/EN</strong>Deux langues</div>
-<div class="stat"><strong>24/7</strong>Accessible</div>
+<div class="stat"><strong>FR/EN</strong>Langues</div>
+<div class="stat"><strong>24/7</strong>Accès</div>
 </section>
 
-<main class="container" id="formations">
+<main class="container">
 
-<div class="title">
-<h2>Nos formations</h2>
-<p>Choisis une matière et commence ton apprentissage.</p>
+<section id="formations">
+<div class="section-title">
+<h2>Nos 20 formations</h2>
+<p>Clique sur une formation pour commencer ton cours.</p>
 </div>
 
 <div class="tools">
-<input
-id="search"
-class="search"
-type="search"
-placeholder="🔎 Rechercher une formation..."
->
+<input id="search" class="search"
+placeholder="🔎 Rechercher une formation...">
 </div>
 
 <div class="filters">
 <button class="filter active" onclick="filterCourses('all',this)">Toutes</button>
 <button class="filter" onclick="filterCourses('school',this)">📚 École</button>
-<button class="filter" onclick="filterCourses('tech',this)">⚙️ Technique</button>
+<button class="filter" onclick="filterCourses('tech',this)">⚡ Technique</button>
 <button class="filter" onclick="filterCourses('business',this)">💼 Business</button>
 <button class="filter" onclick="filterCourses('digital',this)">💻 Numérique</button>
 </div>
 
 <div class="grid" id="courseGrid"></div>
+</section>
 
-<section id="course">
-<div class="course-head">
+<!-- PAGE DE COURS -->
+<section id="coursePage">
+
+<div class="course-top">
 <div>
+<div class="course-icon" id="courseIcon"></div>
 <h2 id="courseTitle"></h2>
-<p id="courseDescription"></p>
+<p id="courseIntro"></p>
 </div>
+
 <button class="close" onclick="closeCourse()">✕ Fermer</button>
 </div>
 
-<div id="lessons"></div>
+<div id="courseContent"></div>
 
 <div class="quiz">
-<h2>🧠 Mini Quiz</h2>
-<p id="question">Quelle est la capitale du Cameroun ?</p>
-
-<button onclick="checkAnswer('yaounde')">Yaoundé</button>
-<button onclick="checkAnswer('douala')">Douala</button>
-<button onclick="checkAnswer('bertoua')">Bertoua</button>
-
-<div id="result"></div>
+<h3>🧠 Quiz de vérification</h3>
+<p id="quizQuestion"></p>
+<div id="quizAnswers"></div>
+<p id="quizResult"></p>
 </div>
+
+<button class="btn back" onclick="closeCourse()">
+⬅ Retour aux formations
+</button>
+
 </section>
 
 </main>
 
-<section class="container" id="apropos">
-<div class="title">
+<section class="about" id="apropos">
 <h2>À propos de MTJ Academy</h2>
 <p>
-MTJ Academy est une plateforme éducative créée pour rendre
-l'apprentissage plus simple, moderne et accessible.
+MTJ Academy est une plateforme éducative créée par
+<strong>M K Jérémie</strong> pour rendre l'apprentissage
+plus accessible, pratique et moderne.
 </p>
-</div>
 </section>
 
 <footer>
 <p><strong>MTJ ACADEMY</strong></p>
 <p>Éducation • Technologie • Entrepreneuriat</p>
-<p>© 2026 M K Jérémie — Tous droits réservés</p>
+<p>© 2026 M K Jérémie</p>
 </footer>
 
 <script>
 
-const courses = [
+/* =========================================================
+   LES 20 FORMATIONS
+========================================================= */
+
+const courses=[
 
 {
-id:1,name:"Mathématiques",icon:"📐",cat:"school",
-desc:"Développe ta logique et maîtrise les bases des mathématiques.",
-lessons:[
-"Les nombres et les opérations",
-"Fractions et pourcentages",
-"Équations et expressions",
-"Géométrie et calculs"
-]},
+id:1,
+name:"Mathématiques",
+icon:"📐",
+cat:"school",
+intro:"Cours de base pour comprendre les nombres, les calculs, les équations et la géométrie.",
+chapters:[
+["Définition des mathématiques",
+"Les mathématiques sont une science qui étudie les nombres, les formes, les grandeurs, les relations et les structures.",
+"Exemple : 5 + 3 = 8. Ici, 5 et 3 sont des nombres et + est une opération."],
+["Les opérations",
+"Les quatre opérations fondamentales sont l'addition, la soustraction, la multiplication et la division.",
+"Exemple : 8 + 2 = 10 ; 9 - 4 = 5 ; 3 × 4 = 12 ; 20 ÷ 5 = 4."],
+["Les fractions",
+"Une fraction représente une partie d'un tout. Elle possède un numérateur et un dénominateur.",
+"Exemple : dans 3/4, 3 est le numérateur et 4 est le dénominateur."],
+["Les équations",
+"Une équation est une égalité contenant généralement une inconnue que l'on cherche à déterminer.",
+"Exemple : x + 5 = 12. Donc x = 7."]
+],
+exercise:"Calcule : 25 + 17, puis résous x + 8 = 20.",
+answer:"25 + 17 = 42 et x = 12.",
+quiz:"Combien font 7 × 6 ?",
+options:["36","42","48"],
+correct:1
+},
 
 {
-id:2,name:"Français",icon:"📖",cat:"school",
-desc:"Améliore ta grammaire, ton vocabulaire et ton expression.",
-lessons:[
-"Grammaire",
-"Conjugaison",
-"Orthographe",
-"Expression écrite"
-]},
+id:2,
+name:"Français",
+icon:"📖",
+cat:"school",
+intro:"Apprends la grammaire, la conjugaison, l'orthographe et l'expression.",
+chapters:[
+["Définition de la grammaire",
+"La grammaire est l'ensemble des règles qui permettent de construire correctement les phrases.",
+"Exemple : « Les élèves travaillent. » Le sujet est « Les élèves » et le verbe est « travaillent »."],
+["Le nom",
+"Le nom désigne une personne, un animal, une chose, un lieu ou une idée.",
+"Exemple : garçon, école, chien, courage."],
+["Le verbe",
+"Le verbe exprime généralement une action ou un état.",
+"Exemple : courir, manger, être, avoir."],
+["La conjugaison",
+"La conjugaison consiste à faire varier un verbe selon le temps, le mode et la personne.",
+"Exemple : je travaille, tu travailles, nous travaillons."]
+],
+exercise:"Conjugue le verbe « faire » au présent avec « nous ».",
+answer:"Nous faisons.",
+quiz:"Quel mot est un verbe ?",
+options:["Maison","Courir","Table"],
+correct:1
+},
 
 {
-id:3,name:"Anglais",icon:"🇬🇧",cat:"school",
-desc:"Apprends à communiquer et à comprendre l'anglais.",
-lessons:[
-"Alphabet et vocabulaire",
-"Verbes essentiels",
-"Conversation",
-"English for work"
-]},
+id:3,
+name:"Anglais",
+icon:"🇬🇧",
+cat:"school",
+intro:"Développe ton vocabulaire et ta capacité à communiquer en anglais.",
+chapters:[
+["The English language",
+"English is an international language used for communication, education, business and technology.",
+"Example: Hello means Bonjour."],
+["Pronouns",
+"Pronouns replace nouns in a sentence.",
+"Example: I, you, he, she, it, we, they."],
+["The verb to be",
+"To be means être. It is one of the most important English verbs.",
+"Example: I am a student. You are my friend."],
+["Simple vocabulary",
+"Learning everyday words helps you communicate more easily.",
+"Example: school = école, book = livre, water = eau."]
+],
+exercise:"Translate into English: « Je suis un étudiant. »",
+answer:"I am a student.",
+quiz:"What does 'book' mean?",
+options:["Livre","Maison","École"],
+correct:0
+},
 
 {
-id:4,name:"Électricité",icon:"⚡",cat:"tech",
-desc:"Découvre les principes fondamentaux de l'électricité.",
-lessons:[
-"Tension, courant et résistance",
-"Loi d'Ohm",
-"Circuits électriques",
-"Sécurité électrique"
-]},
+id:4,
+name:"Électricité",
+icon:"⚡",
+cat:"tech",
+intro:"Découvre les notions essentielles de l'électricité et des circuits.",
+chapters:[
+["Définition de l'électricité",
+"L'électricité est liée à la présence et au déplacement des charges électriques.",
+"Elle est utilisée dans l'éclairage, les machines, les appareils électroniques et de nombreux systèmes."],
+["La tension électrique",
+"La tension électrique est la différence de potentiel entre deux points. Elle se mesure en volts (V).",
+"Exemple : une batterie peut fournir une tension de 12 V."],
+["Le courant électrique",
+"Le courant électrique correspond au déplacement des charges électriques dans un circuit. Il se mesure en ampères (A).",
+"Exemple : un circuit peut être parcouru par un courant de 2 A."],
+["La résistance",
+"La résistance s'oppose au passage du courant électrique. Elle se mesure en ohms (Ω).",
+"Exemple : selon la loi d'Ohm, U = R × I."],
+["La loi d'Ohm",
+"La loi d'Ohm relie la tension U, la résistance R et le courant I.",
+"Exemple : si R = 5 Ω et I = 2 A, alors U = 5 × 2 = 10 V."],
+["Sécurité électrique",
+"La sécurité électrique consiste à prévenir les contacts dangereux, les courts-circuits et les risques liés aux installations.",
+"Il faut respecter les règles de sécurité et utiliser des équipements adaptés."]
+],
+exercise:"Une résistance de 10 Ω est traversée par un courant de 2 A. Calcule la tension.",
+answer:"U = R × I = 10 × 2 = 20 V.",
+quiz:"Quelle est l'unité de la tension ?",
+options:["Ampère","Volt","Ohm"],
+correct:1
+},
 
 {
-id:5,name:"Électronique",icon:"🔌",cat:"tech",
-desc:"Comprends les composants et les circuits électroniques.",
-lessons:[
-"Résistances",
-"Condensateurs",
-"Diodes",
-"Transistors"
-]},
+id:5,
+name:"Électronique",
+icon:"🔌",
+cat:"tech",
+intro:"Découvre les composants électroniques et leur fonctionnement.",
+chapters:[
+["Définition de l'électronique",
+"L'électronique est une branche de la technologie qui utilise des composants pour contrôler et traiter des signaux électriques.",
+"On la retrouve dans les téléphones, ordinateurs, téléviseurs et systèmes de commande."],
+["La résistance",
+"Une résistance limite ou contrôle le courant dans un circuit.",
+"Son unité est l'ohm (Ω)."],
+["Le condensateur",
+"Un condensateur est un composant capable d'emmagasiner de l'énergie électrique sous forme de charge.",
+"Il est utilisé notamment dans le filtrage et certains circuits de temporisation."],
+["La diode",
+"Une diode est un composant qui laisse principalement passer le courant dans un sens.",
+"Elle est utilisée dans le redressement et la protection des circuits."],
+["Le transistor",
+"Le transistor est un composant utilisé notamment comme interrupteur électronique ou amplificateur.",
+"Il est fondamental dans de nombreux circuits électroniques."]
+],
+exercise:"Cite quatre composants électroniques.",
+answer:"Exemples : résistance, condensateur, diode et transistor.",
+quiz:"Quel composant limite le courant ?",
+options:["Résistance","Diode","Transformateur"],
+correct:0
+},
 
 {
-id:6,name:"Informatique",icon:"💻",cat:"digital",
-desc:"Maîtrise les bases de l'informatique et du numérique.",
-lessons:[
-"Ordinateur et systèmes",
-"Fichiers et dossiers",
-"Internet",
-"Sécurité numérique"
-]},
+id:6,
+name:"Informatique",
+icon:"💻",
+cat:"digital",
+intro:"Apprends les bases de l'ordinateur, des fichiers, des logiciels et d'Internet.",
+chapters:[
+["Définition de l'informatique",
+"L'informatique est le domaine qui concerne le traitement automatique de l'information à l'aide d'ordinateurs et de systèmes numériques.",
+"Elle est utilisée dans l'éducation, les entreprises, la communication et la science."],
+["Le matériel",
+"Le matériel, ou hardware, désigne les parties physiques d'un ordinateur.",
+"Exemples : écran, clavier, souris, processeur et disque."],
+["Les logiciels",
+"Un logiciel est un programme qui permet à l'ordinateur d'effectuer des tâches.",
+"Exemples : navigateur web, traitement de texte et lecteur multimédia."],
+["Les fichiers",
+"Un fichier est une unité de données enregistrée sur un support numérique.",
+"Exemple : document.pdf, photo.jpg ou index.html."]
+],
+exercise:"Donne deux exemples de matériel informatique et deux logiciels.",
+answer:"Matériel : clavier et écran. Logiciels : navigateur et traitement de texte.",
+quiz:"Le clavier est-il du matériel ?",
+options:["Oui","Non","Seulement sur Internet"],
+correct:0
+},
 
 {
-id:7,name:"Programmation",icon:"👨‍💻",cat:"digital",
-desc:"Apprends à créer des programmes et des sites web.",
-lessons:[
-"Introduction au code",
-"HTML et CSS",
-"JavaScript",
-"Logique de programmation"
-]},
+id:7,
+name:"Programmation",
+icon:"👨‍💻",
+cat:"digital",
+intro:"Apprends la logique de programmation et les bases de la création web.",
+chapters:[
+["Définition de la programmation",
+"La programmation consiste à écrire des instructions permettant à un ordinateur d'effectuer une tâche.",
+"Un programme peut calculer, afficher des informations ou gérer une application."],
+["Algorithme",
+"Un algorithme est une suite ordonnée d'étapes permettant de résoudre un problème.",
+"Exemple : pour faire un thé, on peut définir une suite d'étapes."],
+["HTML",
+"HTML est un langage utilisé pour structurer le contenu d'une page web.",
+"Exemple : les titres, paragraphes, images et boutons peuvent être structurés avec HTML."],
+["CSS",
+"CSS permet de mettre en forme une page web.",
+"Il permet de gérer les couleurs, tailles, espacements et dispositions."],
+["JavaScript",
+"JavaScript permet d'ajouter de l'interactivité à une page web.",
+"Exemple : afficher une fenêtre, filtrer des éléments ou réagir à un clic."]
+],
+exercise:"Quel langage permet de structurer une page web ?",
+answer:"HTML.",
+quiz:"Quel langage ajoute principalement de l'interactivité ?",
+options:["HTML","JavaScript","JPEG"],
+correct:1
+},
 
 {
-id:8,name:"Entrepreneuriat",icon:"🚀",cat:"business",
-desc:"Transforme une idée en projet.",
-lessons:[
-"Trouver une idée",
-"Créer un projet",
-"Étudier le marché",
-"Développer son activité"
-]},
+id:8,
+name:"Entrepreneuriat",
+icon:"🚀",
+cat:"business",
+intro:"Apprends à transformer une idée en projet et à développer une activité.",
+chapters:[
+["Définition de l'entrepreneuriat",
+"L'entrepreneuriat consiste à créer, organiser et développer un projet ou une activité pour répondre à un besoin.",
+"Exemple : créer un service de montage audio pour des clients."],
+["L'idée",
+"Une idée entrepreneuriale doit répondre à un besoin réel ou résoudre un problème.",
+"Exemple : proposer un service utile aux élèves de son établissement."],
+["Le marché",
+"Le marché regroupe les personnes qui peuvent avoir besoin d'un produit ou d'un service.",
+"Il est important de connaître les clients et leurs attentes."],
+["Le projet",
+"Un projet précise ce que l'on veut faire, pour qui, avec quelles ressources et comment.",
+"Un bon projet doit être organisé et réaliste."]
+],
+exercise:"Donne une idée de petit projet qui pourrait aider les élèves.",
+answer:"Exemple : service d'impression et de mise en forme de documents scolaires.",
+quiz:"Que doit résoudre une bonne idée d'entreprise ?",
+options:["Un besoin","Un jeu uniquement","Aucun problème"],
+correct:0
+},
 
 {
-id:9,name:"Marketing",icon:"📣",cat:"business",
-desc:"Apprends à promouvoir un produit ou un service.",
-lessons:[
-"Marketing de base",
-"Publicité",
-"Réseaux sociaux",
-"Création de contenu"
-]},
+id:9,
+name:"Marketing",
+icon:"📣",
+cat:"business",
+intro:"Apprends à faire connaître un produit, un service ou une marque.",
+chapters:[
+["Définition du marketing",
+"Le marketing regroupe les méthodes utilisées pour comprendre les clients, promouvoir une offre et développer une activité.",
+"Exemple : créer une publicité pour présenter un service."],
+["Le client",
+"Le client est la personne ou l'organisation qui achète ou utilise un produit ou service.",
+"Il faut comprendre ses besoins avant de communiquer."],
+["La publicité",
+"La publicité est une communication destinée à présenter et promouvoir une offre.",
+"Elle peut utiliser les réseaux sociaux, affiches, vidéos ou autres supports."],
+["Le contenu",
+"Le contenu marketing peut être une vidéo, une image, un texte ou une publication.",
+"Un bon contenu doit être clair et adapté au public."]
+],
+exercise:"Cite trois moyens de faire connaître un service.",
+answer:"Exemples : réseaux sociaux, affiches et bouche-à-oreille.",
+quiz:"Le marketing cherche notamment à comprendre :",
+options:["Les clients","Les machines uniquement","Les bâtiments"],
+correct:0
+},
 
 {
-id:10,name:"Commerce",icon:"🛒",cat:"business",
-desc:"Découvre les techniques de vente et de commerce.",
-lessons:[
-"Introduction au commerce",
-"Relation client",
-"Techniques de vente",
-"Fidélisation"
-]},
+id:10,
+name:"Commerce",
+icon:"🛒",
+cat:"business",
+intro:"Découvre les bases de la vente, de l'achat et de la relation client.",
+chapters:[
+["Définition du commerce",
+"Le commerce désigne les activités liées à l'achat, la vente et l'échange de biens ou services.",
+"Exemple : une boutique vend des produits à ses clients."],
+["Le vendeur",
+"Le vendeur présente les produits, conseille les clients et participe à la vente.",
+"Un bon vendeur doit être poli, attentif et honnête."],
+["Le client",
+"Le client achète ou utilise le produit ou service proposé.",
+"Comprendre ses besoins permet de mieux le servir."],
+["La vente",
+"La vente est l'opération par laquelle un produit ou service est fourni en échange d'une valeur, généralement de l'argent.",
+"Il faut présenter clairement le prix et les caractéristiques du produit."]
+],
+exercise:"Pourquoi faut-il bien écouter un client ?",
+answer:"Pour comprendre ses besoins et lui proposer une solution adaptée.",
+quiz:"Qui achète un produit ?",
+options:["Le client","Le vendeur uniquement","Le produit"],
+correct:0
+},
 
 {
-id:11,name:"Gestion",icon:"📊",cat:"business",
-desc:"Apprends à organiser et gérer une activité.",
-lessons:[
-"Organisation",
-"Budget",
-"Gestion des stocks",
-"Gestion d'entreprise"
-]},
-
-{
-id:12,name:"Histoire",icon:"🏛️",cat:"school",
-desc:"Explore les grandes périodes et événements historiques.",
-lessons:[
-"Antiquité",
-"Moyen Âge",
-"Époque moderne",
-"Histoire du Cameroun"
-]},
-
-{
-id:13,name:"Géographie",icon:"🌍",cat:"school",
-desc:"Découvre les pays, territoires, populations et environnements.",
-lessons:[
-"Continents",
-"Pays et capitales",
-"Relief et climat",
-"Afrique et Cameroun"
-]},
-
-{
-id:14,name:"Citoyenneté",icon:"🤝",cat:"school",
-desc:"Comprends tes droits, tes devoirs et la vie en société.",
-lessons:[
-"Citoyen et citoyenneté",
-"Droits et devoirs",
-"Respect des autres",
-"Responsabilité"
-]},
-
-{
-id:15,name:"Culture générale",icon:"🧠",cat:"school",
-desc:"Développe tes connaissances dans plusieurs domaines.",
-lessons:[
-"Sciences",
-"Géographie",
-"Histoire",
-"Actualités et connaissances"
-]},
-
-{
-id:16,name:"Développement personnel",icon:"🌱",cat:"business",
-desc:"Développe tes habitudes, ton organisation et ta confiance.",
-lessons:[
-"Objectifs",
-"Organisation",
-"Discipline",
-"Persévérance"
-]},
-
-{
-id:17,name:"Communication",icon:"🎤",cat:"business",
-desc:"Apprends à mieux parler, écouter et présenter tes idées.",
-lessons:[
-"Communication orale",
-"Écoute",
-"Présentation",
-"Communication professionnelle"
-]},
-
-{
-id:18,name:"Emploi & CV",icon:"📄",cat:"business",
-desc:"Prépare ton CV et développe tes compétences professionnelles.",
-lessons:[
-"Créer un CV",
-"Lettre de motivation",
-"Entretien",
-"Recherche d'emploi"
-]},
-
-{
-id:19,name:"Intelligence artificielle",icon:"🤖",cat:"digital",
-desc:"Découvre les bases et les usages de l'intelligence artificielle.",
-lessons:[
-"Qu'est-ce que l'IA ?",
-"IA générative",
-"Utiliser les outils IA",
-"IA et avenir professionnel"
-]},
-
-{
-id:20,name:"Réseaux & Numérique",icon:"🌐",cat:"digital",
-desc:"Comprends les réseaux informatiques et le monde numérique.",
-lessons:[
-"Réseaux informatiques",
-"Internet",
-"Adresses IP",
-"Sécurité numérique"
-]}
-
-];
-
-const grid=document.getElementById("courseGrid");
-
-function displayCourses(list){
-
-grid.innerHTML="";
-
-list.forEach(c=>{
-
-const card=document.createElement("div");
-
-card.className="card";
-
-card.dataset.cat=c.cat;
-
-card.innerHTML=`
-<div class="icon">${c.icon}</div>
-<h3>${c.name}</h3>
-<p>${c.desc}</p>
-<span class="level">FORMATION</span>
-`;
-
-card.onclick=()=>openCourse(c);
-
-grid.appendChild(card);
-
-});
-
-}
-
-function openCourse(c){
-
-document.getElementById("course").style.display="block";
-
-document.getElementById("courseTitle").textContent=
-c.icon+" "+c.name;
-
-document.getElementById("courseDescription").textContent=c.desc;
-
-document.getElementById("lessons").innerHTML=
-c.lessons.map((lesson,i)=>`
-<div class="lesson">
-<h3>Leçon ${i+1}</h3>
-<p>${lesson}</p>
-</div>
-`).join("");
-
-document.getElementById("result").textContent="";
-
-document.getElementById("course").scrollIntoView({
-behavior:"smooth"
-});
-
-}
-
-function closeCourse(){
-
-document.getElementById("course").style.display="none";
-
-window.scrollTo({
-top:document.getElementById("formations").offsetTop-80,
-behavior:"smooth"
-});
-
-}
-
-function filterCourses(category,button){
-
-document.querySelectorAll(".filter")
-.forEach(b=>b.classList.remove("active"));
-
-button.classList.add("active");
-
-if(category==="all"){
-displayCourses(courses);
-}else{
-displayCourses(courses.filter(c=>c.cat===category));
-}
-
-}
-
-document.getElementById("search").addEventListener("input",function(){
-
-const text=this.value.toLowerCase();
-
-displayCourses(
-courses.filter(c=>
-c.name.toLowerCase().includes(text) ||
-c.desc.toLowerCase().includes(text)
-)
-);
-
-});
-
-function checkAnswer(answer){
-
-const result=document.getElementById("result");
-
-if(answer==="yaounde"){
-
-result.textContent="✅ Bonne réponse !";
-
-}else{
-
-result.textContent="❌ Mauvaise réponse. Essaie encore !";
-
-}
-
-}
-
-document.getElementById("language").addEventListener("change",function(){
-
-if(this.value==="en"){
-
-document.querySelector(".hero h1").textContent=
-"Learn. Build. Succeed.";
-
-document.querySelector(".hero p").textContent=
-"A modern educational platform to develop your knowledge, skills and future.";
-
-document.querySelector(".hero .btn").textContent=
-"Discover courses";
-
-document.querySelector(".title h2").textContent=
-"Our Courses";
-
-document.querySelector(".title p").textContent=
-"Choose a subject and start learning.";
-
-document.getElementById("search").placeholder=
-"🔎 Search for a course...";
-
-}else{
-
-document.querySelector(".hero h1").textContent=
-"Apprends. Construis. Réussis.";
-
-document.querySelector(".hero p").textContent=
-"Une plateforme éducative moderne pour développer tes connaissances, tes compétences et préparer ton avenir.";
-
-document.querySelector(".hero .btn").textContent=
-"Découvrir les formations";
-
-document.querySelector(".title h2").textContent=
-"Nos formations";
-
-document.querySelector(".title p").textContent=
-"Choisis une matière et commence ton apprentissage.";
-
-document.getElementById("search").placeholder=
-"🔎 Rechercher une formation...";
-
-}
-
-});
-
-displayCourses(courses);
-
-</script>
-
-</body>
-</html>
+id:11,
+name:"Gestion",
+icon:"📊",
+cat:"business",
+intro:"Apprends à organiser les ressources, l'argent, les stocks et les activités.",
+chapters:[
+["Définition de la gestion",
+"La gestion consiste à organiser et contrôler les ressources d'une activité afin d'atteindre des objectifs.",
+"Elle concerne notamment l'argent, le temps, les personnes et les stocks."],
+["Budget",
+"Un budget est une prévision des recettes et des dépenses.",
+"Il aide à éviter de dépenser sans contrôle."],
+["Stock",
+"Le stock représente les produits disponibles pour être vendus ou utilisés.",
+"Une bonne gestion évite les ruptures et les excès de stock."],
+["Organisation",
+"L'organisation consiste à planifier les tâches et les ressources.",
+"Une bonne organisation permet de gagner du temps."]
+],
+exercise:"À quoi sert un budget ?",
+answer:"Il sert à prévoir et contrôler les recettes et les dépenses.",
+quiz:"Que permet une bonne gestion ?",
+options:["Mieux organiser les ressources","Tout perdre","Éviter tout travail"],
+correct:0
+},
